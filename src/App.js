@@ -1,22 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Inner from "./Inner";
 import { useGetAllBreeds } from "./useGetAllBreeds";
-
-export const Inner = ({ selectedBreed, setSelectedBreed, allBreeds }) => (
-  <div data-testid="main">
-    <div>
-      {allBreeds.map((breed) => (
-        <button
-          key={breed}
-          data-testid="breed-button"
-          onClick={() => setSelectedBreed(breed)}
-        >
-          {breed}
-        </button>
-      ))}
-    </div>
-    <pre data-testid="selected-breed">{selectedBreed}</pre>
-  </div>
-);
 
 const App = () => {
   const [selectedBreed, setSelectedBreed] = useState(null);
